@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-    origin:['https://almabetter-capstone-entertanment-app-api.vercel.app'],
+    origin:['https://almabetter-capstone-entertanment-app-s6z8.vercel.app'],
     credentials:true
 }))
 
