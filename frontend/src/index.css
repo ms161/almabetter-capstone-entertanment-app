@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #000014;
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+}
+
+/* .slick-slider {
+  width: 1219px;
+} */
