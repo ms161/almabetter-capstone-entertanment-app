@@ -29,6 +29,7 @@ app.use(cors({
     credentials: true, // allow sending cookies or authorization headers
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // specify allowed methods
 }))
+app.options('*', cors()); // Allow all preflight requests
 
 app.use("/api/users", userRoutes);
 app.use("/api/movies", movieRoutes)
