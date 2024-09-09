@@ -24,11 +24,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({
-    origin: "https://almabetter-capstone-entertanment-app-frontend-xhoy.vercel.app", // your frontend URL
-    credentials: true, // allow sending cookies or authorization headers
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // specify allowed methods
-}))
+app.use(cors())
 app.options('*', cors()); // Allow all preflight requests
 
 app.use("/api/users", userRoutes);
@@ -38,11 +34,12 @@ app.use("/api/search", searchRoutes)
 app.use("/api/bookmark", bookmarkRoutes)
 
 
-app.use(express.static(path.join(__dirname, '../frontend/dist')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))
-})
+app.use(express.static(path.join(__dirname, 'dist')));
 
+// Serve `index.html` for any unmatched routes (important for SPAs)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 app.listen(3000, () => {
     console.log("listening to port 3000")
 })
