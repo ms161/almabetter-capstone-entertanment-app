@@ -1,4 +1,4 @@
-export const BASE_URL = ''
+export const BASE_URL = 'https://almabetter-capstone-entertanment-app-frontend-nz9b-api.vercel.app'
 export const USERS_URL = '/api/users'
 export const MOVIES_URL = '/api/movies'
 export const TV_URL = '/api/tv'

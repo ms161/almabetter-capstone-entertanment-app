@@ -24,10 +24,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({
-    origin:['https://almabetter-capstone-entertanment-app-s6z8.vercel.app'],
-    credentials:true
-}))
+app.use(cors())
 
 app.use("/api/users", userRoutes);
 app.use("/api/movies", movieRoutes)
